@@ -17,12 +17,16 @@ config :hello_phoenix, HelloPhoenix.Endpoint,
 # will use higher CPU in dev as the number of files
 # grow. Adjust as necessary.
 config :hello_phoenix, HelloPhoenix.Endpoint,
-  live_reload: [Path.expand("priv/static/js/app.js"),
-                Path.expand("priv/static/css/app.css"),
-                Path.expand("web/templates/**/*.eex")]
+  live_reload: [
+    patterns: [
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif)$},
+      ~r{web/views/.*(ex)$},
+      ~r{web/templates/.*(eex)$}
+    ]
+  ]
 
-#config :hello_phoenix, HelloPhoenix.Endpoint,
-#  reloadable_paths: ["web"]
+config :hello_phoenix, HelloPhoenix.Endpoint,
+  reloadable_paths: ["web"]
 
 # Enables code reloading for development
 config :phoenix, :code_reloader, true
