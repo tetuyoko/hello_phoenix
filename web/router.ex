@@ -21,6 +21,11 @@ defmodule HelloPhoenix.Router do
     get "/hello/:messenger", HelloController, :show
   end
 
+  socket "/ws", HelloPhoenix do
+    channel "rooms:*", RoomChannel, via: [WebSocket]
+    channel "foods:*", FoodChannel
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", HelloPhoenix do
   #   pipe_through :api
