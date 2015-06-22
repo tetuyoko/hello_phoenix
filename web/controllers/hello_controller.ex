@@ -13,5 +13,6 @@ defmodule HelloPhoenix.HelloController do
 
   def show(conn, %{"messenger" => messenger }) do
     render conn, "show.html", messenger: messenger
+    render conn, "show.html", messenger: messenger
   end
 end

@@ -7,13 +7,6 @@ use Mix.Config
 
 # Configures the endpoint
 config :hello_phoenix, HelloPhoenix.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif)$},
-      ~r{web/views/.*(ex)$},
-      ~r{web/templates/.*(eex)$}
-    ]
-  ],
   url: [host: "localhost"],
   secret_key_base: "QOi2No7CTbm4nSO+J5yyqL7kPaz8ZMH/N3okeoxvjfMcoWYv93/ccDtOCx6qOFG7",
   debug_errors: false,
