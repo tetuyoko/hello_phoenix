@@ -15,7 +15,6 @@ defmodule HelloPhoenix.Endpoint do
     plug Phoenix.LiveReloader
   end
 
-
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
