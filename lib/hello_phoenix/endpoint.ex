@@ -6,14 +6,14 @@ defmodule HelloPhoenix.Endpoint do
     at: "/", from: :hello_phoenix,
     only: ~w(css images js favicon.ico robots.txt)
 
-  plug Plug.Logger
-
-  # Code reloading will only work if the :code_reloader key of
-  # the :phoenix application is set to true in your config file.
+  # Code reloading can be explicitly enabled under the
+  # :code_reloader configuration of your endpoint.
   if code_reloading? do
-    plug Phoenix.CodeReloader
     plug Phoenix.LiveReloader
+    plug Phoenix.CodeReloader
   end
+
+  plug Plug.Logger
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
@@ -26,9 +26,8 @@ defmodule HelloPhoenix.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_hello_phoenix_key",
-    signing_salt: "ZEtN7JI4",
-    encryption_salt: "JQ43s0Jf"
+    signing_salt: "IXKz5Peg",
+    encryption_salt: "lBMIp8z4"
 
   plug :router, HelloPhoenix.Router
-
 end

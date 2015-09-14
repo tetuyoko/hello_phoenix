@@ -15,5 +15,4 @@ config :hello_phoenix, HelloPhoenix.Repo,
   username: "postgres",
   password: "postgres",
   database: "hello_phoenix_test",
-  size: 1,
-  max_overflow: false
+  size: 1 # Use a single connection for transactional tests

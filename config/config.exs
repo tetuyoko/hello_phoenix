@@ -8,11 +8,11 @@ use Mix.Config
 # Configures the endpoint
 config :hello_phoenix, HelloPhoenix.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "QOi2No7CTbm4nSO+J5yyqL7kPaz8ZMH/N3okeoxvjfMcoWYv93/ccDtOCx6qOFG7",
+  root: Path.dirname(__DIR__),
+  secret_key_base: "eRyio3M2c25wL2m2fTQkhV+DDTIEkU8tTgM59r+Rs5xMSP0Wa3H+KMQrpmghKgsY",
   debug_errors: false,
-  root: Path.expand("..", __DIR__),
   pubsub: [name: HelloPhoenix.PubSub,
-    adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

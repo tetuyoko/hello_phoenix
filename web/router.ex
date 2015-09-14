@@ -1,5 +1,5 @@
 defmodule HelloPhoenix.Router do
-  use Phoenix.Router
+  use HelloPhoenix.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -16,14 +16,6 @@ defmodule HelloPhoenix.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/hello", HelloController, :index
-    get "/hello/unko", HelloController, :unko
-    get "/hello/:messenger", HelloController, :show
-  end
-
-  socket "/ws", HelloPhoenix do
-    channel "rooms:*", RoomChannel, via: [WebSocket]
-    channel "foods:*", FoodChannel
   end
 
   # Other scopes may use custom stacks.
